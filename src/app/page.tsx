@@ -6,6 +6,8 @@ import AuthButton from "@/components/auth/AuthButton.server";
 
 export default async function Home() {
   const session = await auth();
+
+  
   return (
     <main>
       {session?.user?.name ? 

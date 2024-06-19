@@ -11,6 +11,8 @@ import { Form } from "@/components/ui/form"
 import AuthButton from "@/components/auth/AuthButton.server"
 // import SignUpComponent from "../signup/page";
 import SignUpButton from "@/components/signupbutton/SignUpButton";
+import "./login.css";
+// import LoginLayout from "@/app/login/layout";
 // import { redirect } from "next/dist/server/api-utils";
 // import { FormControl, FormLabel } from '@mui/material';
 
@@ -34,7 +36,7 @@ export default function LoginComponent() {
 
   
   return (
-    <div className="pt-12">
+    <div className="flex items-center pt-12">
     <Card className="mx-auto max-w-sm">
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl font-bold">Collaborator Login</CardTitle>

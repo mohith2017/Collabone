@@ -1,5 +1,5 @@
 import { Providers } from "./Providers";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import "../styles/text-editor.css";
 
 export const metadata = {

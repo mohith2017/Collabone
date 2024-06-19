@@ -14,9 +14,8 @@ const liveblocks = new Liveblocks({
 
 export async function POST(request: NextRequest) {
   // Get the current user's unique id from your database
-  try {
   const sesh = await auth();
-  const userName = sesh?.user?.name;
+  const userName = sesh?.user?.name!;
 
   const { data: user, error } = await supabase
    .from('users')
@@ -32,9 +31,9 @@ export async function POST(request: NextRequest) {
   }
 
   const userInfo = {
-    name: user?.name,
-    color: user?.color,
-    picture: user?.picture,
+    name: user?.name!,
+    color: user?.color!,
+    picture: user?.picture!,
   }
 
   // Create a session for the current user
@@ -49,11 +48,7 @@ export async function POST(request: NextRequest) {
   // Authorize the user and return the result
   const { body, status } = await session.authorize();
   return new Response(body, { status });
-   }
-   catch (error) {
-    console.error('Error:', error);
-    return new Response('Internal Server Error', { status: 500 });
-  }
+   
 }
 
 
