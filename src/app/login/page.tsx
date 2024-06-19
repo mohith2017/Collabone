@@ -40,13 +40,13 @@ export default function LoginComponent() {
     <Card className="mx-auto max-w-sm">
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl font-bold">Collaborator Login</CardTitle>
-        <CardDescription>Enter your email and password to login to your collaborator account</CardDescription>
+        <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
       
         <div className="space-y-4">
         <AuthButton/>
-          <SignUpButton/>
+          {/* <SignUpButton/> */}
         </div>
         
       </CardContent>
