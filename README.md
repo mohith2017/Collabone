@@ -20,7 +20,7 @@ access the application.
 [x] Additional:
   [x] User Session management
 
-![User Authentication](https://freeimage.host/i/dHBm16X)
+[https://freeimage.host/i/dHBm16X](https://freeimage.host/i/dHBm16X)
 
 
 Authorization:
