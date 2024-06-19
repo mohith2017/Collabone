@@ -4,7 +4,6 @@ import LoginComponent from "./login/page"
 import { redirect } from "next/navigation";
 import { ActionResult} from "@/components/form/FormComponent";
 import Form from "@/components/form/FormComponent";
-import logout from "@/components/logout/Logout";
 import { auth } from "@/auth";
 import AuthButton from "@/components/auth/AuthButton.server";
 import Protected from "./editor/page";
