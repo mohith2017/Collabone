@@ -1,14 +1,11 @@
-"use client"
-import App from "@/app";
+import App from "@/app/app";
 import Image from "next/image";
-import { FileContextProvider } from "./context/FileContext";
+import { FileContextProvider } from "../context/FileContext";
 
 export default function Home() {
   return (
    <>
-   <FileContextProvider>
    <App/>
-   </FileContextProvider>
    </>
   );
 }

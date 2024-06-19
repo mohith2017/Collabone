@@ -1,26 +1,28 @@
-"use client"
-import { DrawerSide } from "@/components/drawer/DrawerSide"
-import EditorComponent from "@/components/editor/EditorComponent"
-import { TabEditor } from "@/components/tabs/TabEditor"
-import { FileContextProvider } from "@/context/FileContext"
+import { auth } from "@/auth";
+import EditorPage from "../../components/editor/Main";
+import AuthButton from "@/components/auth/AuthButton.server";
 
-function EditorPage() {
 
-    return (
-        <FileContextProvider>
-            <div className="flex flex-row ">
-            <div className="pt-3 px-3">
-            <DrawerSide />
-            </div>
-            <div className="pt-24 px-16 w-full">
-            <EditorComponent />
-            </div>
-            <div className="pr-24 pt-12">
-            <TabEditor />
-            </div>
-            </div>
-        </FileContextProvider>
-    )
+export default async function Protected() {
+  const session = await auth();
+  // console.log(session?.user)
+
+  async function onGetUserAction() {
+    "use server";
+    const session = await auth();
+    return session?.user?.name ?? null;
+  }
+
+  return (
+    <main>
+
+      <div>User: {session?.user?.name}</div>
+      {session?.user?.name ? (
+        <EditorPage username={session.user.name} />
+      ) : (
+        <>Please log in:</>
+      )}
+      <AuthButton/>
+    </main>
+  );
 }
-
-export default EditorPage
