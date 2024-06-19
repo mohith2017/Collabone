@@ -20,7 +20,7 @@ access the application.
 [x] Additional:
   [x] User Session management
 
-![User authentication](https://ibb.co/qnC0dMz")
+![User authentication](https://ibb.co/qnC0dMz)
 
 
 Authorization:
