@@ -29,7 +29,6 @@ import { Input } from "../../components/ui/input"
 import { Label } from "../../components/ui/label"
 // import { auth } from "@/auth/lucia"
 import { redirect } from "next/navigation";
-import signup from "@/components/signup/Signup";
 import { DivideCircle } from "lucide-react";
 // import { validateRequest } from "@/lib/lib.auth";
 
