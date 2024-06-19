@@ -7,6 +7,7 @@ import Form from "@/components/form/FormComponent";
 import logout from "@/components/logout/Logout";
 import { auth } from "@/auth";
 import AuthButton from "@/components/auth/AuthButton.server";
+import Protected from "./editor/page";
 
 const App = async () => {
     // const { user } = await validateRequest();
@@ -14,11 +15,18 @@ const App = async () => {
     //   return redirect("/login");
     // }
     const session = await auth();
+
     return (
+      <>
+      {session?.user?.name ? ( <Protected/>) : (
+        
         <>
         <h1 className="text-3xl font-bold">Home Page</h1>
       <pre>{JSON.stringify(session, null, 2)}</pre>
       <LoginComponent/>
+      </>
+    )  }
+        
 
       
       {/* <h1>Hi, {user.username}!</h1>

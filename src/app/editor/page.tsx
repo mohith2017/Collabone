@@ -7,11 +7,7 @@ export default async function Protected() {
   const session = await auth();
   // console.log(session?.user)
 
-  async function onGetUserAction() {
-    "use server";
-    const session = await auth();
-    return session?.user?.name ?? null;
-  }
+
 
   return (
     <main>
