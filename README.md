@@ -15,10 +15,10 @@ Please click on 'Sign In' to reach the main UI page
 
 ## Features implemented
 Authentication:
-[x] Implement authentication mechanism to ensure that only registered users can <br/>
+- Implement authentication mechanism to ensure that only registered users can <br/>
 access the application.
-[x] Additional:
-  [x] User Session management
+- Additional:
+  - User Session management
 
 [https://freeimage.host/i/dHBm16X](https://freeimage.host/i/dHBm16X)
 
