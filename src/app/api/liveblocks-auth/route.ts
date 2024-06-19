@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
   if (error) {
     console.error('Error fetching user:', error);
-    return null;
+    return;
   }
 
   const userInfo = {
