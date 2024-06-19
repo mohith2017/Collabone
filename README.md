@@ -20,8 +20,7 @@ access the application.
 [x] Additional:
   [x] User Session management
 
-![User authentication](https://freeimage.host/i/dHBm16X)
-
+[User Authentication](https://freeimage.host/i/dHBm16X)
 
 Authorization:
 [x] By default, you can implement a model without any roles i.e., one user creates a <br/>
