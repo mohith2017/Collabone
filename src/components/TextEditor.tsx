@@ -15,7 +15,7 @@ import Youtube from "@tiptap/extension-youtube";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { EditorView } from "prosemirror-view";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import * as Y from "yjs";
 import { useRoom, useSelf } from "@liveblocks/react/suspense";
 import { DocumentSpinner } from "@/primitives/Spinner";
@@ -73,7 +73,7 @@ function TiptapEditor({ doc, provider }: EditorProps) {
   // Get user info from Liveblocks authentication endpoint
   const { name, color, picture } = useSelf((me) => me.info);
 
-
+  
 
   // Set up editor with plugins, and place user info into Yjs awareness and cursors
   const editor = useEditor({

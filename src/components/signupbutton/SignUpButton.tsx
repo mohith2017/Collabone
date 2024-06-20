@@ -1,16 +1,17 @@
 "use client"
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function SignUpButton() {
+  const router = useRouter();
 
     const handleSignUp = () => {
-        return redirect("/signup");
+        router.push("/signup");
       }
     
       
     return (
     <div className="flex justify-center">
-            <a onClick={handleSignUp}>Register Here</a>
+            <button type="button" onClick={handleSignUp}>CLICK HERE</button>
             </div>
         
     )

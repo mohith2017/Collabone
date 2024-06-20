@@ -6,7 +6,10 @@ export const config = {
 };
 
 export default auth((req) => {
+  console.log("Request:", req);
   const reqUrl = new URL(req.url);
+  
+
   if (!req.auth && reqUrl?.pathname !== "/") {
     return NextResponse.redirect(
       new URL(
@@ -17,4 +20,6 @@ export default auth((req) => {
       )
     );
   }
+
+
 });
