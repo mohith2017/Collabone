@@ -3,8 +3,10 @@ import { auth } from "@/auth";
 import { TextEditor } from "@/components/TextEditor";
 import AuthButton from "@/components/auth/AuthButton.server";
 
+
 export default async function Editor() {
   const session = await auth();
+
 
 
   return (
@@ -12,7 +14,7 @@ export default async function Editor() {
       {session?.user?.name ? 
       ( <Room>       
         <TextEditor />
-      </Room>) : (<>Invalid</>
+      </Room>) : (<>Invalid! Log In here:<br/><AuthButton/></>
       )}
       
     </main>

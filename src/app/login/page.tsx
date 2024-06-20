@@ -13,6 +13,7 @@ import AuthButton from "@/components/auth/AuthButton.server"
 import SignUpButton from "@/components/signupbutton/SignUpButton";
 import { useEffect } from "react";
 import { useState } from "react";
+import EditorButton from "@/components/editorbutton/EditorButton";
 // import LoginLayout from "@/app/login/layout";
 // import { redirect } from "next/dist/server/api-utils";
 // import { FormControl, FormLabel } from '@mui/material';
@@ -36,7 +37,13 @@ export default function LoginComponent() {
           New User?
           <br/>
           <SignUpButton/>
+        
+        <br/><br/>
+        Already Signed In?
+          <br/>
+          <EditorButton/>
         </div>
+
         
       </CardContent>
     </Card>
