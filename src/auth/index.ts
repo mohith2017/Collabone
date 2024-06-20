@@ -45,6 +45,20 @@ const authOptions: NextAuthConfig = {
         //   : null;
   const { username, password } = credentials;
 
+  const generateSessionToken = () => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let token = '';
+    const tokenLength = 32; // Adjust the length as needed
+  
+    for (let i = 0; i < tokenLength; i++) {
+      token += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+  
+    return token;
+  };
+  
+  const sessionToken = generateSessionToken();
+  console.log(sessionToken); // Example output: 'Xt7Zq9Lm2Ej8Rb5Wy3Kf0Gn1Ov4Pu6Qr'
   
   // Fetch the user from Supabase based on the email
   const { data: user, error } = await supabase
@@ -69,7 +83,7 @@ const authOptions: NextAuthConfig = {
 
     const { data, error } = await supabase
     .from('sessions')
-    .insert({ id: user.id, expires: null, sessionToken: user.name, userId: null })
+    .insert({ id: user.id, expires: null, sessionToken: generateSessionToken(), userId: null, name: user.name})
     .select()
     
     if (error) {

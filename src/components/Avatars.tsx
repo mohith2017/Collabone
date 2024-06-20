@@ -1,9 +1,20 @@
 import { useOthers, useSelf } from "@liveblocks/react/suspense";
 import styles from "./Avatars.module.css";
+import { useState } from "react";
 
 export function Avatars() {
   const users = useOthers();
   const currentUser = useSelf();
+  const [isPresent, setIsPresent] = useState<boolean>(false);
+
+  // console.log(currentUser);
+//   for (let user of users) {
+//   if (user.id === currentUser.id) {
+//     console.log(`Found user with id ${user.id}`);
+//     setIsPresent(true);
+//     break;
+//   }
+// }
 
   return (
     <div className={styles.avatars}>
@@ -37,3 +48,4 @@ export function Avatar({ picture, name }: { picture: string; name: string }) {
     </div>
   );
 }
+

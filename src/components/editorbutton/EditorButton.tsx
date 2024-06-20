@@ -1,17 +1,17 @@
 "use client"
 import { useRouter } from "next/navigation";
 
-export default function SignUpButton() {
+export default function EditorButton() {
   const router = useRouter();
 
-    const handleSignUp = () => {
-        router.push("/signup");
+    const handleEditor = () => {
+        router.push("/editor");
       }
     
       
     return (
     <div className="flex justify-center">
-            <button type="button" onClick={handleSignUp}>CLICK HERE</button>
+            <button type="button" onClick={handleEditor}>CLICK HERE</button>
             </div>
         
     )
