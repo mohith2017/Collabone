@@ -180,40 +180,43 @@ function TiptapEditor({ doc, provider }: EditorProps) {
         },
       }),
     ],
+    // onCreate: async ({ editor }) => {
+      // Only set content if the editor is empty
+
+      // const response = await fetch('/api/document', {
+      //   method: 'GET',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'name': name,
+      //   },
+      // });
+
+      // const result = await response.json();
+      // const { message, data } = result;
+      // console.log(data);
+
+      // if (editor.isEmpty) {
+      //   editor.commands.setContent(data);
+      // }
+    // },
     onUpdate: async ({ editor }) => {
       const documentData = editor.getHTML();
-      console.log('Document data:', documentData);
+      // console.log('Document data:', documentData);
 
+      const requestData = {
+        name: name,
+        document: documentData
+      }
 
-     
+      const response = await fetch('/api/document', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      });
+    
       
-      // const { data, error } = await supabase
-      // .from('sessions')
-      // .select()
-
-    
-    //   if (error) {
-    //     console.error('Error retrieving session data', error);
-    //     return null;
-    // }
-
-    // data.forEach(async item => {
-    //   console.log(item.id);
-
-      // const { data, error } = await supabase
-      // .from('users')
-      // .update({ document : documentData })
-      // .eq('id', item.id )
-
-      // if (error) {
-      //   console.error('Error inserting document data', error);
-      //   return null;
-    // }
-    // });
-
-    
-
-    // console.log(data);
     },
   });
 
